@@ -1,0 +1,39 @@
+title = "Bløg of Nęwswìm"
+baseurl = "https://www.example.com"
+theme = "vec"
+languageCode = "en-us"
+paginate = 10
+
+publishDir = "docs"
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "danminshew-com"
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = "UA-92806649-1"
+
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "post"
+    weight = 0
+    url = "/post"
+  [[menu.main]]
+    name = "contact"
+    weight = 1
+    url = "/contact"
+
+[params]
+  Keywords = "tech, blog, education, interviews, literature, politics"
+  Description = "Striving toward object permanence"
+
+  Avater = "https://ucarecdn.com/1afe8b5d-92df-4afd-90ad-11d78e0231e1/-/resize/300x300/"
+  SelfIntro = "Ocassionally, I say smart things. Sometimes, people ask me to write them down. This isn't all that often."
+  Email = "danminshew@gmail.com"
+
+  GithubID = "newswim"
+  TwitterID = "newswim"
+  FacebookID = "danminshew"
+  LinkedInID = "dan-minshew-92b413a1"
+  GoogleplusID = "DanielMinshewTheInternet"
