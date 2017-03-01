@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Describing Programming To An Artist &middot; Bløg of Nęwswìm </title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.18.1" />
+
+
+<link rel="stylesheet" href="http://www.danminshew.com/css/vec.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link href="" rel="alternate" type="application/rss+xml" title="Bløg of Nęwswìm" />
+
+</head>
+
+<body>
+  <header>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="http://www.danminshew.com">/home/bløg of nęwswìm</a>
+      </li>
+      
+      
+      <li class="pull-left current">
+        <a href="/post">~/post</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/contact">~/contact</a>
+      </li>
+      
+  
+      <li class="pull-right"><a href=""><i class="fa fa-rss"></i></a></li>
+    </ul>
+  </nav>
+</header>
+  <div class="content">
+    
+    
+    <section class="post">
+      <h1 class="post-title"><a href="http://www.danminshew.com/post/programming-to-an-artist/">Describing Programming To An Artist</a></h1>
+      <span class="post-date">Feb 28, 2017 </span>
+      <div class="post-content">
+        <pre><code class="language-text">a lot of maintaining code bases is exploratory, trying to figure out what's going on
+a lot of time it's poorly or mis-documented (or not at all)
+there's nothing that can just run your code through an analytic engine and give you a read out of what's happening, it has to be somewhat self-documenting like that
+</code></pre>
+
+<blockquote>
+<p>In curriculum class we talked about working backwards from products or formatting it so that the ideas are generative and product/ process flexible.
+But it&rsquo;s literally working backwards trying to fix things</p>
+</blockquote>
+
+<pre><code class="language-text">yeah, there are a lot of parallels
+debuggers work through a sequence of code linearly, stepping over broken bits, climbing up a call chain to get to the original signal
+</code></pre>
+
+<blockquote>
+<p>Hmm is a debugger a person or a deployment of a tool?</p>
+</blockquote>
+
+<pre><code class="language-text">it's a thing within a programming environment that lets you inspect pieces of code one part at a time
+but you have access to _only_ that part
+and it works in a step-wise manner
+</code></pre>
+
+<blockquote>
+<p>Ah ok
+Ohh so it separates things by like actions?</p>
+</blockquote>
+
+<pre><code class="language-text">kind of. The runtime (or interpreter) evaluates your code line by line and puts values into a block of memory, then it runs your functions one at a time
+that function might call other functions, which in turn might call other functions, but it always finds it's way back to the first one in the list, once that's all done, it proceeds to the next line
+</code></pre>
+
+<blockquote>
+<p>Hmm it gets these by identifying like action verbs or something?</p>
+</blockquote>
+
+<pre><code class="language-text">and that all happens in fractions of a second
+yeah exactly - the names are arbitrary, but it helps to name them in clever ways that indicate what's that piece of code is doing
+there's really only two things that a language understands, statements and expressions
+(those are the real names, and that's really all that can occur, programming is all about combining and building those up into robust systems)
+</code></pre>
+
+<blockquote>
+<p>Statement vs expression. Go&hellip;</p>
+</blockquote>
+
+<pre><code class="language-text">a statement just says something about the world, &quot;Name equals Tom&quot;, &quot;If this is true, do this thing&quot;
+expressions take statements and perform some kind of computation on them
+&quot;Print the name Tom seventeen times&quot;
+&quot;Find my current location on a map&quot;
+so expressions often contain verbs
+</code></pre>
+
+<blockquote>
+<p>Wouldn&rsquo;t &ldquo;if this is true do that&rdquo; be an expression?</p>
+</blockquote>
+
+<pre><code class="language-text">the &quot;do that&quot; portion is
+but the if/else is a statement about the world
+</code></pre>
+
+<blockquote>
+<p>Got it
+Like ____ = ______
+If ____ then _____
+Statement</p>
+</blockquote>
+
+<pre><code class="language-text">there are also a million tricks and hacky shorthands, but everything can theoretically be converted into simple statements and expressions
+right!
+yes
+</code></pre>
+
+<blockquote>
+<p>What&rsquo;s a function vs an expression</p>
+</blockquote>
+
+<pre><code class="language-text">1 sec
+Dan
+back
+Functions are sort of like containers or wrappers around statements and expressions, but they have the added ability to Return something (but they don't have to)
+</code></pre>
+
+<blockquote>
+<p>Woah
+Hmm so like a receipt of an expression?</p>
+</blockquote>
+
+<pre><code class="language-text">kind of! but a function can return any type of data (string, object, number or another function)
+it can also return nothing
+</code></pre>
+
+<blockquote>
+<p>Ok</p>
+</blockquote>
+
+<pre><code class="language-text">it's just a product of what a function is -- and it's a little bit different from one language to another
+</code></pre>
+
+<blockquote>
+<p>So like what&rsquo;s an example?</p>
+</blockquote>
+
+<pre><code class="language-text">a function might reference things from outside itself, but the outside world has no access to what's inside of a function
+that's called closure, and it's one of the core concepts behind languages like javascript
+</code></pre>
+
+<blockquote>
+<p>Woah
+Might of just lost me
+why can&rsquo;t the outside world access it</p>
+</blockquote>
+
+<pre><code class="language-text">so if a function is like a container for things, it can access statements outside of itself (it's scope), but stuff outside of it can't change anything within it
+so its contents are protected in that way
+you need a way of protecting the values of your statements, and putting them inside of a function is one way to do that
+but, I think that was enough programming facts for one night! That's actually a lot of stuff.
+</code></pre>
+
+<blockquote>
+<p>I get it!
+Got it!</p>
+</blockquote>
+
+<pre><code class="language-text">functions are one-way
+</code></pre>
+
+<blockquote>
+<p>Container was misleading but it&rsquo;s like literally like parenthesis</p>
+</blockquote>
+
+<pre><code class="language-text">yeah totally
+what's inside the parenthesis has to boil down to one thing
+</code></pre>
+
+<blockquote>
+<p>So, like math.</p>
+</blockquote>
+
+      </div>
+    </section>
+    
+    <section class="pagination clearfix">
+       
+      
+    </section>
+    
+    
+<section id="disqus_thread" class='disqus'></section>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://www.danminshew.com/post/programming-to-an-artist/";
+    
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//danminshew-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+  <footer>
+  <div class="footer-info">
+    <p>
+      <a href="mailto:danminshew@gmail.com?subject="><i class="fa fa-envelope-o"></i> danminshew@gmail.com </a>
+      {
+        <a href="https://gohugo.io/" title="Hugo :: A fast and modern static website engine">Hugo 0.18.1</a>,
+        <a href="https://github.com/IvanChou/yii.im" title="vec">Vec</a> 
+      }
+      {<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="CC BY-NC-ND 3.0">CC BY-NC-ND 3.0</a>}
+    </p>
+  </div>
+</footer>
+  
+  <script src="http://www.danminshew.com/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92806649-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>
