@@ -1,5 +1,5 @@
 title = "Bløg of Nęwswìm"
-baseurl = "https://www.danminshew.com"
+baseurl = "http://www.danminshew.com"
 theme = "vec"
 languageCode = "en-us"
 paginate = 10
