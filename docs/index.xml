@@ -31,9 +31,7 @@
       <pubDate>Tue, 28 Feb 2017 17:26:47 -0600</pubDate>
       
       <guid>http://www.danminshew.com/post/programming-to-an-artist/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a lot of maintaining code bases is exploratory, trying to figure out what&#39;s going on
-a lot of time it&#39;s poorly or mis-documented (or not at all)
-there&#39;s nothing that can just run your code through an analytic engine and give you a read out of what&#39;s happening, it has to be somewhat self-documenting like that
+      <description>&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a lot of maintaining code bases is exploratory, trying to figure out what&#39;s going on a lot of time it&#39;s poorly or mis-documented (or not at all) there&#39;s nothing that can just run your code through an analytic engine and give you a read out of what&#39;s happening, it has to be somewhat self-documenting like that
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -41,7 +39,7 @@ there&#39;s nothing that can just run your code through an analytic engine and g
 But it&amp;rsquo;s literally working backwards trying to fix things&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;yeah, there are a lot of parallels
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;yeah, there are a lot of parallels..
 debuggers work through a sequence of code linearly, stepping over broken bits, climbing up a call chain to get to the original signal
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -49,9 +47,7 @@ debuggers work through a sequence of code linearly, stepping over broken bits, c
 &lt;p&gt;Hmm is a debugger a person or a deployment of a tool?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;it&#39;s a thing within a programming environment that lets you inspect pieces of code one part at a time
-but you have access to _only_ that part
-and it works in a step-wise manner
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;it&#39;s a thing within a programming environment that lets you inspect pieces of code one part at a time, but you have access to ONLY that part -- and it works in a step-wise manner
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -59,29 +55,24 @@ and it works in a step-wise manner
 Ohh so it separates things by like actions?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;kind of. The runtime (or interpreter) evaluates your code line by line and puts values into a block of memory, then it runs your functions one at a time
-that function might call other functions, which in turn might call other functions, but it always finds it&#39;s way back to the first one in the list, once that&#39;s all done, it proceeds to the next line
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;kind of. The runtime (or interpreter) evaluates your code line by line and puts values into a block of memory, then it runs your functions one at a time. That function might call other functions, which in turn might call other functions, but it always finds it&#39;s way back to the first one in the list, once that&#39;s all done, it proceeds to the next line -- and that all happens in fractions of a second.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Hmm it gets these by identifying like action verbs or something?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;and that all happens in fractions of a second
-yeah exactly - the names are arbitrary, but it helps to name them in clever ways that indicate what&#39;s that piece of code is doing
-there&#39;s really only two things that a language understands, statements and expressions
-(those are the real names, and that&#39;s really all that can occur, programming is all about combining and building those up into robust systems)
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Yeah exactly! The names are arbitrary, but it helps to name them in clever ways that indicate what&#39;s that piece of code is doing; there&#39;s really only two things that a language understands, STATEMENTS and EXPRESSIONS. (Those are the real names, and that&#39;s really all that can occur, programming is all about combining and building those up into robust systems).
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Statement vs expression. Go&amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a statement just says something about the world, &amp;quot;Name equals Tom&amp;quot;, &amp;quot;If this is true, do this thing&amp;quot;
-expressions take statements and perform some kind of computation on them
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a statement just says something about the world, &amp;quot;Name equals Tom&amp;quot;, &amp;quot;If this is true, do this thing&amp;quot;; expressions take statements and perform some kind of computation on them:
 &amp;quot;Print the name Tom seventeen times&amp;quot;
 &amp;quot;Find my current location on a map&amp;quot;
-so expressions often contain verbs
+so, expressions often contain verbs.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -108,8 +99,7 @@ yes
 &lt;p&gt;What&amp;rsquo;s a function vs an expression&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;1 sec
-Dan
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;1 sec..
 back
 Functions are sort of like containers or wrappers around statements and expressions, but they have the added ability to Return something (but they don&#39;t have to)
 &lt;/code&gt;&lt;/pre&gt;
@@ -119,8 +109,7 @@ Functions are sort of like containers or wrappers around statements and expressi
 Hmm so like a receipt of an expression?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;kind of! but a function can return any type of data (string, object, number or another function)
-it can also return nothing
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;kind of! but a function can return any type of data (string, object, number or another function). It can also return nothing
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -134,8 +123,7 @@ it can also return nothing
 &lt;p&gt;So like what&amp;rsquo;s an example?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a function might reference things from outside itself, but the outside world has no access to what&#39;s inside of a function
-that&#39;s called closure, and it&#39;s one of the core concepts behind languages like javascript
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;a function might reference things from outside itself, but the outside world has no access to what&#39;s inside of a function. That&#39;s called closure, and it&#39;s one of the core concepts behind languages like javascript
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -144,10 +132,7 @@ Might of just lost me
 why can&amp;rsquo;t the outside world access it&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;so if a function is like a container for things, it can access statements outside of itself (it&#39;s scope), but stuff outside of it can&#39;t change anything within it
-so its contents are protected in that way
-you need a way of protecting the values of your statements, and putting them inside of a function is one way to do that
-but, I think that was enough programming facts for one night! That&#39;s actually a lot of stuff.
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;so if a function is like a container for things, it can access statements outside of itself (it&#39;s scope), but stuff outside of it can&#39;t change anything within it -- so its contents are protected in that way -- you need a way of protecting the values of your statements, and putting them inside of a function is one way to do that. But, I think that was enough programming facts for one night! That&#39;s actually a lot of stuff.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
