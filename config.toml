@@ -57,7 +57,7 @@ googleAnalytics = "UA-92806649-1"
 
   # Metadata for search engines and social sharing
   name = "Dan Minshew"
-  description = "Hi. I like to make things and (try to) solve problems. I cate about helping other self-taught developers, contributing to open source and community. Reading about functional programming, fractals, politics, religious studies, de-centralizations, informatics, literatary theory, psychology, neuroscience and gardening."
+  description = "Hi. I like to make things and (try to) solve problems."
   shareImage = "images/drinky.jpg"
   twitterHandle = "newswim"
 
@@ -71,7 +71,7 @@ googleAnalytics = "UA-92806649-1"
   [params.content]
     name = "Dan Minshew"
     tagline = "Developer, Community Organizer."
-    bio = "Hi. I like to make things and (try to) solve problems. Blogging about self-taught development, open source and community. Reading about functional programming, fractals, politics, religious studies, literatary theory, psychology, neuroscience and gardening."
+    bio = "Helping out with open source and community. Reading about functional programming, fractals, politics, religious studies, literatary theory, psychology, 1990s baseball cards, neuroscience and gardening."
 
   # Section - Visual
   [params.visual]
