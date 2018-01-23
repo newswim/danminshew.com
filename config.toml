@@ -1,39 +1,153 @@
-title = "Bløg of Nęwswìm"
-baseurl = "http://www.danminshew.com"
-theme = "vec"
-languageCode = "en-us"
-paginate = 10
+# title = "Welcome Home."
+# baseurl = "http://www.danminshew.com"
+# theme = "vec"
+# languageCode = "en-us"
+# paginate = 10
+#
+# publishDir = "docs"
+#
+# # Enable comments by entering your Disqus shortname
+# disqusShortname = "danminshew-com"
+#
+# # Enable analytics by entering your Google Analytics tracking ID
+# googleAnalytics = "UA-92806649-1"
+#
+#
+# [menu]
+#   # Shown in the side menu.
+#   [[menu.main]]
+#     name = "post"
+#     weight = 0
+#     url = "/post"
+#   [[menu.main]]
+#     name = "contact"
+#     weight = 1
+#     url = "/contact"
+#
+# [params]
+#   Keywords = "tech, blog, education, interviews, literature, politics"
+#   Description = "Striving toward object permanence"
+#
+#   Avater = "https://gravatar.com/avatar/3111b0f5bfa18ba35f46b225b8da8a85?s=512&d=https://codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png"
+#   SelfIntro = "Ocassionally, I say smart things. Sometimes, people ask me to write them down. This isn't all that often."
+#   Email = "danminshew@gmail.com"
+#
+#   GithubID = "newswim"
+#   TwitterID = "newswim"
+#   FacebookID = "danminshew"
+#   LinkedInID = "dan-minshew-92b413a1"
+#   GoogleplusID = "DanielMinshewTheInternet"
 
+
+
+
+
+# Site settings
+baseURL = "https://example.org/"
+languageCode = "en-US"
+title = "danminshew.com - My site, with some links and drinks."
+theme = "split-theme"
+disableKinds = ["page", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
 publishDir = "docs"
 
-# Enable comments by entering your Disqus shortname
-disqusShortname = "danminshew-com"
-
-# Enable analytics by entering your Google Analytics tracking ID
+# Enter your tracking code to enable Google Analytics
 googleAnalytics = "UA-92806649-1"
 
-
-[menu]
-  # Shown in the side menu.
-  [[menu.main]]
-    name = "post"
-    weight = 0
-    url = "/post"
-  [[menu.main]]
-    name = "contact"
-    weight = 1
-    url = "/contact"
-
 [params]
-  Keywords = "tech, blog, education, interviews, literature, politics"
-  Description = "Striving toward object permanence"
 
-  Avater = "https://gravatar.com/avatar/3111b0f5bfa18ba35f46b225b8da8a85?s=512&d=https://codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png"
-  SelfIntro = "Ocassionally, I say smart things. Sometimes, people ask me to write them down. This isn't all that often."
-  Email = "danminshew@gmail.com"
+  # Metadata for search engines and social sharing
+  name = "Dan Minshew"
+  description = "Hi. I like to make things and (try to) solve problems. I cate about helping other self-taught developers, contributing to open source and community. Reading about functional programming, fractals, politics, religious studies, de-centralizations, informatics, literatary theory, psychology, neuroscience and gardening."
+  shareImage = "images/drinky.jpg"
+  twitterHandle = "newswim"
 
-  GithubID = "newswim"
-  TwitterID = "newswim"
-  FacebookID = "danminshew"
-  LinkedInID = "dan-minshew-92b413a1"
-  GoogleplusID = "DanielMinshewTheInternet"
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Copyright
+  copyright = "&copy;2017 Dan Minshew"
+
+  # Section - Content
+  [params.content]
+    name = "Dan Minshew"
+    tagline = "Developer, Community Organizer."
+    bio = "Hi. I like to make things and (try to) solve problems. Blogging about self-taught development, open source and community. Reading about functional programming, fractals, politics, religious studies, literatary theory, psychology, neuroscience and gardening."
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = true
+      file = "images/drinky.jpg"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = false
+      mute = true
+      file = "videos/background.mp4"
+      # youtubeId = "dk9uNWPP7EA"
+
+  # Links
+  #
+  # Links List #1
+  [[params.links]]
+    [params.links.list1]
+      heading = "Connect"
+
+      [[params.links.list1.link]]
+        text = "Blog"
+        url = "https://medium.com/@newswim"
+
+      [[params.links.list1.link]]
+        text = "Email"
+        url = "danminshew@gmail.com"
+
+      [[params.links.list1.link]]
+        text = "Github"
+        url = "https://github.com/newswim"
+
+      # [[params.links.list1.link]]
+      #   text = "Newsletter"
+      #   url = "#"
+
+  # Links List #2
+  [[params.links]]
+    [params.links.list2]
+      heading = "Social"
+
+      [[params.links.list2.link]]
+        text = "Twitter"
+        url = "https://twitter.com/newswim"
+
+      [[params.links.list2.link]]
+        text = "Instagram"
+        url = "https://www.instagram.com/selfieatthegym/"
+
+      [[params.links.list2.link]]
+        text = "LinkedIn"
+        url = "https://www.linkedin.com/in/dan-minshew-92b413a1/"
+
+
+  # Links List #3
+  [[params.links]]
+    [params.links.list3]
+      heading = "Network"
+
+      [[params.links.list3.link]]
+        text = "TechMill"
+        url = "https://techmill.co/"
+
+      [[params.links.list3.link]]
+        text = "Techmill Podcast"
+        url = "https://soundcloud.com/techmilldenton"
+      #
+      [[params.links.list3.link]]
+        text = "TechMill Slack"
+        url = "https://slack.techmill.co/"
+
+  # The original template is released under the Creative Commons Attribution 3.0 License.
+  # Please keep the original attribution link when using for your own project.
+  # If you'd like to use the template without the attribution, you can check out
+  # the license option via the template author's website: https://onepagelove.com/split

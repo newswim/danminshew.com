@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Feb 2017 17:26:47 -0600</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Describing Programming To An Artist</title>
+      <link>http://localhost:1313/post/programming-to-an-artist/</link>
+      <pubDate>Tue, 28 Feb 2017 17:26:47 -0600</pubDate>
+      
+      <guid>http://localhost:1313/post/programming-to-an-artist/</guid>
+      <description>a lot of maintaining code bases is exploratory, trying to figure out what&#39;s going on a lot of time it&#39;s poorly or mis-documented (or not at all) there&#39;s nothing that can just run your code through an analytic engine and give you a read out of what&#39;s happening, it has to be somewhat self-documenting like that   In curriculum class we talked about working backwards from products or formatting it so that the ideas are generative and product/ process flexible.</description>
+    </item>
+    
+  </channel>
+</rss>
