@@ -7,6 +7,8 @@
 
 Infrastructure phase is **done**: site live at https://danminshew.com (TLS, www→apex 308, auto-deploy on push), SEO baseline + agent routes shipped, rotating epigraph + colophon landed (D-012/D-013), taste principle recorded in [voice.md](voice.md). The project is now content-bound.
 
+Visual identity established (D-015): fractal-tree mark, deterministic from Dan's parameters at seed 55 — regenerate any asset with `npm run mark`. Favicon (bare glyph, auto dark), header mark, OG card, and apple-touch-icon all replaced on branch `worktree/personal-site-branding-b1190a`; needs merge to main to deploy.
+
 ## Waiting on Dan
 
 - **Projects page review** (rebuilt 2026-07-18 as content collection, D-014): check the copy in `src/content/projects/*.md`; fill in `stack:` arrays (left empty rather than guessed); supply a Texas Defense Data screenshot (the alpha is password-gated, so no capture) — drop it in `src/content/projects/images/` + one frontmatter line.
