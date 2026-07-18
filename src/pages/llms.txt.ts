@@ -21,6 +21,7 @@ export const GET: APIRoute = async ({ site }) => {
     `- [Projects](${abs('/projects/')}): apps, civic tech, community work`,
     `- [Music](${abs('/music/')}): bands, recordings, and the ongoing archive`,
     `- [Writing](${abs('/writing/')}): essays, notes, and thoughts`,
+    `- [Colophon](${abs('/colophon/')}): how the site is built, and why the footer says what it says`,
     '',
     '## Writing',
     '',

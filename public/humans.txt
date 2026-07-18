@@ -6,4 +6,4 @@ Contact: via https://danminshew.com
 /* SITE */
 Stack: Astro, TypeScript, plain CSS custom properties
 Deploys: Vercel
-Doctrine: Grown, not optimized.
+Doctrine: riverrun — see https://danminshew.com/colophon

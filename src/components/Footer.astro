@@ -1,9 +1,18 @@
+---
+import { epigraphs } from '../data/epigraphs';
+---
+
 <footer>
   <p class="quiet">
     Austin, Texas · <a href="/rss.xml">RSS</a> · <a href="https://github.com/newswim">GitHub</a>
   </p>
-  <p class="quiet">Grown, not optimized.</p>
+  <p class="quiet"><a id="epigraph" href="/colophon/">{epigraphs[0]}</a></p>
 </footer>
+
+<script is:inline define:vars={{ epigraphs }}>
+  const el = document.getElementById('epigraph');
+  if (el) el.textContent = epigraphs[Math.floor(Math.random() * epigraphs.length)];
+</script>
 
 <style>
   footer {
@@ -20,5 +29,9 @@
 
   p {
     margin: 0;
+  }
+
+  #epigraph {
+    font-style: italic;
   }
 </style>

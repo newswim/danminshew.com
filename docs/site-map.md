@@ -10,11 +10,11 @@ Mirrors the README's four pillars, plus writing. Start small; every page earns i
 - **/projects** — Built and building: apps, websites, volunteer/civic projects. Each project gets a short writeup (what, why, stack, status). ThisTownSucks lives here or in /music, wherever it fits better.
 - **/music** — Bands played in, recordings, venues, bands played with. Part history, part archive. This is where rescued MySpace-era audio eventually lives (see archiving.md).
 - **/writing** — Essays, notes, thoughts. The blog, without calling it that.
+- **/colophon** — how the site is built; home of the rotating footer epigraph (promoted from v2, 2026-07-18).
 
 ## v2 candidates (don't build yet)
 
 - **/now** — what Dan is focused on right now (Sivers-style). Cheap to add, high signal.
-- **/colophon** or **/uses** — how the site is built, tools. Indie-web handshake.
 - **/library** — books, papers, and threads of the interest field; could grow into a digital garden.
 - **/photos** or a nature/travel thread if the writing pulls that direction.
 

@@ -3,7 +3,8 @@
 Personal site of Dan Minshew — software engineer and musician in Austin, Texas. A home base
 outside the feeds: work, projects, two decades of bands, and writing.
 
-Live at **[danminshew.com](https://danminshew.com)**. Grown, not optimized.
+Live at **[danminshew.com](https://danminshew.com)** — see the
+[colophon](https://danminshew.com/colophon/) for how and why.
 
 ## Stack
 

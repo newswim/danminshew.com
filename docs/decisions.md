@@ -15,3 +15,4 @@ Immutable, append-only. New decisions get the next ID; a reversal is a *new* ent
 | D-009 | 2026-07-18 | Stack accepted by Dan (accepts D-006). SCSS considered and declined — modern baseline CSS (custom properties, nesting, color-mix) makes a precompiler unnecessary | accepted |
 | D-010 | 2026-07-18 | Agent/bot-facing routes from day one: dynamic `/llms.txt` (auto-indexes writing), `/humans.txt`, robots.txt pointer — SEO + agent-readability as first-class | accepted |
 | D-011 | 2026-07-18 | Vercel project `danminshew-com` under team `newswim`; production deploys via CLI until GitHub App access is granted, then git auto-deploys; apex + www attached to project | accepted, done |
+| D-012 | 2026-07-18 | Fixed footer slogan replaced by a rotating epigraph: random per visit from a curated list (`src/data/epigraphs.ts`), stable default `riverrun` in static HTML for crawlers/no-JS, linking to `/colophon` which lists the collection and explains the build | accepted |
