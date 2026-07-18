@@ -1,12 +1,148 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const history = [
+  {
+    company: 'Atlassian',
+    years: '2023–present',
+    roles: [
+      {
+        title: 'Senior Software Engineer, Trello Frontend Platform',
+        years: '2025–',
+        note: 'Developer productivity at codebase scale: large-scale migrations, faster feedback loops, quality standards, and the system primitives product teams build on.',
+      },
+      {
+        title: 'Senior Software Engineer, Jira Align Core',
+        years: '2023–2025',
+        note: 'Full-stack work bringing Jira Align closer to the rest of the Atlassian suite — modernized Roadmap, Milestones, and Capacity Planning.',
+      },
+    ],
+  },
+  {
+    company: 'SimSpace',
+    years: '2019–2023',
+    roles: [
+      {
+        title: 'Engineering Manager',
+        years: '2020–2023',
+        note: 'Grew the frontend team from 12 to 25 engineers with near-100% retention for two years; authored the Engineering Growth Framework; ran a weekly Architecture Forum to pay down technical debt on purpose rather than by accident.',
+      },
+      {
+        title: 'Software Engineer & Frontend Lead',
+        years: '2019–2020',
+        note: 'Design system and internal tooling for cyber-range capabilities — modeling attacks, monitoring defenders, designing network topologies. Mentoring, pairing, weekly dev talks.',
+      },
+    ],
+  },
+  {
+    company: 'Touch Titans',
+    years: '2017–2019',
+    roles: [
+      {
+        title: 'Software Engineer',
+        years: '',
+        note: 'Full-stack consolidation of a client’s scattered tooling: data migration, auth, CMS, payments, realtime chat. Node, Postgres, React, GraphQL.',
+      },
+    ],
+  },
+  {
+    company: 'SAVI Controls',
+    years: '2015–2017',
+    roles: [
+      {
+        title: 'Software Developer',
+        years: '',
+        note: 'Commercial A/V control software driving hundreds of endpoints at once; migrated the app from Meteor to React and Mongo to Postgres.',
+      },
+    ],
+  },
+  {
+    company: 'Learn Everything',
+    years: '2014',
+    roles: [
+      {
+        title: 'Web Developer',
+        years: '',
+        note: 'First dev job, in Denton. Meteor apps.',
+      },
+    ],
+  },
+];
 ---
 
-<Base title="Work" description="Dan Minshew's professional work — senior software engineer.">
+<Base title="Work" description="Dan Minshew's work history — senior software engineer: TypeScript, React, functional programming, teams that stay healthy while they scale.">
   <h1>Work</h1>
   <p>
-    Senior software engineer at Atlassian, working on Trello's frontend platform. Previously
-    frontend lead and engineering manager at SimSpace. TypeScript, React, functional programming.
+    A decade and change of building for the web — TypeScript and React by day, functional
+    programming by temperament. I care about developer experience, design systems, and teams that
+    stay healthy while they scale.
   </p>
-  <p class="quiet">[Placeholder — Dan writes this page: roles, capabilities, selected work.]</p>
+
+  <h2>History</h2>
+  <section>
+    {
+      history.map((org) => (
+        <div class="org">
+          <h3>
+            {org.company} <span class="span">{org.years}</span>
+          </h3>
+          {org.roles.map((role) => (
+            <div class="role">
+              <p class="role-title">
+                {role.title}
+                {role.years && <span class="span">{role.years}</span>}
+              </p>
+              <p class="role-note">{role.note}</p>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </section>
+
+  <p class="quiet">
+    BA, University of North Texas · AAS, Brazosport College · the long version lives on
+    <a href="https://www.linkedin.com/in/dan-minshew/">LinkedIn</a>.
+  </p>
 </Base>
+
+<style>
+  .org {
+    margin-block-end: var(--space-3);
+  }
+
+  .org + .org {
+    border-top: 1px solid var(--line);
+    padding-block-start: var(--space-3);
+  }
+
+  h3 {
+    margin-block: 0 var(--space-1);
+  }
+
+  .span {
+    font-family: var(--font-ui);
+    font-size: 0.7em;
+    color: var(--faded);
+    letter-spacing: 0.03em;
+    margin-inline-start: 0.4em;
+  }
+
+  .role {
+    margin-block-end: var(--space-2);
+  }
+
+  .role:last-child {
+    margin-block-end: 0;
+  }
+
+  .role-title {
+    margin-block-end: 0.15rem;
+    font-weight: 500;
+  }
+
+  .role-note {
+    margin-block-end: 0;
+    color: var(--ink);
+  }
+</style>
