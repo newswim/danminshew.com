@@ -1,33 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const all = await getCollection('projects');
+const section = (name: 'building' | 'civic') =>
+  all.filter((p) => p.data.section === name).sort((a, b) => a.data.order - b.data.order);
+
+const building = section('building');
+const civic = section('civic');
 ---
 
 <Base title="Projects" description="Things Dan Minshew has built and is building — apps, civic tech, community work.">
   <h1>Projects</h1>
 
   <h2>Building</h2>
-  <ul>
-    <li>
-      <a href="https://www.texasdefensedata.org">Texas Defense Data</a> — a long-running project
-      to collect and analyze publicly available court records, building an accessible data portal
-      to power research and analysis. Already surfacing noteworthy trends in Texas' court systems.
-      Currently in alpha.
-    </li>
-    <li>
-      <a href="https://www.synth.cool">synth.cool</a> — a side project for learning sound
-      synthesis. I keep buying synthesizers and pedals and still feel like I hold only a nascent
-      understanding of how they work — it's so fundamental, yet almost esoteric.
-    </li>
-    <li><a href="http://www.thistownsucks.com">ThisTownSucks</a> — [Dan describes]</li>
-    <li>This site — built in the open; the <a href="https://github.com/newswim/danminshew.com">repo's docs folder</a> doubles as its own case study</li>
-  </ul>
+  {building.map((project) => <ProjectCard project={project} />)}
 
   <h2>Civic &amp; community</h2>
-  <ul>
-    <li><a href="https://github.com/open-austin/indigent-defense-stats">Indigent defense stats</a> — court-records scraping with Open Austin; feeds the Texas Defense Data work above</li>
-    <li>TechMill Denton — board member, treasurer</li>
-    <li>Open Denton — civic data ETL</li>
-  </ul>
-
-  <p class="quiet">[Placeholder — each project gets a short writeup: what, why, stack, status.]</p>
+  {civic.map((project) => <ProjectCard project={project} />)}
 </Base>
