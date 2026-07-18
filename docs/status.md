@@ -13,6 +13,7 @@ Visual identity established (D-016): fractal-tree mark, deterministic from Dan's
 
 - **Projects page review** (rebuilt 2026-07-18 as content collection, D-014): check the copy in `src/content/projects/*.md`; fill in `stack:` arrays (left empty rather than guessed); supply a Texas Defense Data screenshot (the alpha is password-gated, so no capture) — drop it in `src/content/projects/images/` + one frontmatter line.
 
+- **OG tagline phrase** — current card says "Software engineer & musician in Austin, Texas." as a deliberate placeholder (D-018); Dan wants something with more life. Swap is one line in `scripts/generate-mark.mjs` + `npm run mark`.
 - **Content drafts** — about, work, music, projects (incl. a ThisTownSucks description). Workflow: Dan drafts raw → Claude does a voice pass against [voice.md](voice.md).
 - **404 copy taste review** — current "Nothing grows here / back to the trailhead" predates the D-013 restraint principle; Dan should keep or kill.
 - Epigraph curation in `src/data/epigraphs.ts` (optional, ongoing)
