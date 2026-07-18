@@ -17,10 +17,10 @@ Infrastructure phase is **done**: site live at https://danminshew.com (TLS, www�
 
 ## Claude-side queue (small, non-blocking)
 
-- Default **OG image** (social-share card) — real gap when links get shared; design is taste-sensitive, so mock first, show Dan before shipping
-- `apple-touch-icon` (PNG) to complement the SVG favicon
-- Consider `astro check` in the build for CI typechecking
+- ~~OG image~~ — done 2026-07-18: light/paper card (Dan's pick from two mockups), wired site-wide
+- ~~apple-touch-icon~~, ~~astro check in build~~ — done 2026-07-18
 - Lighthouse/a11y pass once real content exists (placeholder pages would skew it)
+- 404 copy reviewed by Dan — keeping it
 
 ## Parked ideas
 
