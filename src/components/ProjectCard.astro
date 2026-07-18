@@ -1,6 +1,6 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 
 interface Props {
   project: CollectionEntry<'projects'>;
@@ -9,17 +9,25 @@ interface Props {
 const { project } = Astro.props;
 const { title, url, purpose, stack, status, images } = project.data;
 const { Content } = await render(project);
+
+const gallery = await Promise.all(
+  images.map(async (img) => ({
+    alt: img.alt,
+    src: img.src,
+    full: await getImage({ src: img.src, format: 'webp', width: 1920 }),
+  }))
+);
 ---
 
 <article class="project">
   {
-    images.length > 0 && (
+    gallery.length > 0 && (
       <div class="frames">
-        {images.map((img) => (
-          <a href={url}>
+        {gallery.map((g) => (
+          <a class="thumb" href={g.full.src} aria-label={`View larger: ${g.alt}`}>
             <Image
-              src={img.src}
-              alt={img.alt}
+              src={g.src}
+              alt={g.alt}
               widths={[720, 1440]}
               sizes="(max-width: 45rem) 100vw, 42rem"
             />
@@ -39,6 +47,26 @@ const { Content } = await render(project);
   {stack.length > 0 && <p class="stack">{stack.join(' · ')}</p>}
 </article>
 
+<script>
+  const dialog = document.createElement('dialog');
+  dialog.className = 'lightbox';
+  const full = document.createElement('img');
+  dialog.append(full);
+  document.body.append(dialog);
+
+  document.addEventListener('click', (event) => {
+    const thumb = (event.target as Element).closest?.('.frames a.thumb');
+    if (thumb instanceof HTMLAnchorElement) {
+      event.preventDefault();
+      full.src = thumb.href;
+      full.alt = thumb.querySelector('img')?.alt ?? '';
+      dialog.showModal();
+    }
+  });
+
+  dialog.addEventListener('click', () => dialog.close());
+</script>
+
 <style>
   .project {
     margin-block: var(--space-3);
@@ -50,23 +78,23 @@ const { Content } = await render(project);
   }
 
   .frames {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
     gap: var(--space-2);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     margin-block-end: var(--space-2);
   }
 
-  .frames a {
-    flex: 0 0 auto;
-    max-width: 100%;
-    scroll-snap-align: start;
+  .thumb {
     line-height: 0;
+    cursor: zoom-in;
   }
 
-  .frames img {
-    max-width: 100%;
+  .thumb img {
+    width: 100%;
     height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: top;
     border: 1px solid var(--line);
     border-radius: 8px;
   }

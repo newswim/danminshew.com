@@ -115,6 +115,29 @@ img {
   font-size: 0.9em;
 }
 
+dialog.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 92vh;
+  cursor: zoom-out;
+}
+
+dialog.lightbox img {
+  display: block;
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+dialog.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.72);
+}
+
 .skip-link {
   position: absolute;
   inset-inline-start: var(--space-2);

@@ -5,6 +5,11 @@ purpose: Public court records, made legible.
 status: alpha
 section: building
 order: 1
+images:
+  - src: ./images/tdd-texas-map.webp
+    alt: Texas Defense Data — map of Texas counties colored by indigent-defense system type
+  - src: ./images/tdd-data-dashboard.webp
+    alt: County detail for Matagorda County — spending vs. state and national averages, court activity, and attorney caseloads against guidelines
 ---
 
 A long-running project to collect and analyze publicly available court records, building an

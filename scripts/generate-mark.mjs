@@ -1,7 +1,7 @@
 // The site mark: a fractal tree, grown deterministically from tuned parameters.
 // Regenerates public/favicon.svg, public/apple-touch-icon.png, public/og.png.
 // The header mark in src/components/Header.astro shares the YOUNG geometry below.
-// Run: npm run mark   (D-015)
+// Run: npm run mark   (D-016)
 import sharp from 'sharp';
 import { writeFileSync } from 'node:fs';
 
