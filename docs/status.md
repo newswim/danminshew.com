@@ -5,7 +5,7 @@
 
 ## In flight
 
-- **https://danminshew.com is LIVE** — DNS cut over (A record at Namecheap), TLS cert issued 2026-07-18, GitHub connected: pushes to `main` auto-deploy.
+- **https://danminshew.com is LIVE** — DNS cut over (A record at Namecheap), TLS cert issued 2026-07-18, GitHub connected: pushes to `main` auto-deploy. `www` 308-redirects to apex.
 
 - **Dan hunting lost recordings on YouTube** — MySpace-hosted audio confirmed dead (logged-in test); YouTube-backed tracks still play, making YouTube the primary recovery lane. See [archiving.md](archiving.md).
 - **Pry EP recording session this weekend** — capture at the source: session files, stems, bounces organized and backed up.
