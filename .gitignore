@@ -16,3 +16,5 @@ dist/
 # private knowledge base — never committed, even while the repo is private.
 # Keeps git history clean so the repo can go public later without scrubbing.
 docs/private/
+.vercel
+.env*

@@ -5,6 +5,9 @@
 
 ## In flight
 
+- **Waiting on Dan — DNS cutover at Namecheap**: point danminshew.com at Vercel (A `76.76.21.21` + CNAME `www` → `cname.vercel-dns.com`, or switch nameservers to `ns1`/`ns2.vercel-dns.com`). Site is live at https://danminshew-com.vercel.app meanwhile.
+- **Waiting on Dan — grant Vercel GitHub App access** to the private repo so pushes auto-deploy (project → Settings → Git, or github.com/settings/installations).
+
 - **Dan hunting lost recordings on YouTube** — MySpace-hosted audio confirmed dead (logged-in test); YouTube-backed tracks still play, making YouTube the primary recovery lane. See [archiving.md](archiving.md).
 - **Pry EP recording session this weekend** — capture at the source: session files, stems, bounces organized and backed up.
 
