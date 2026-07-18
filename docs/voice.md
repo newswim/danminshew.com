@@ -13,6 +13,14 @@ Observed from Dan's own writing so far — to be refined against real drafts, no
 
 Curiosity over authority. Humility with a spine. Care for living things — land, people, attention. Skepticism of reductive labels and extractive platforms, expressed without bitterness.
 
+## Taste (standing principle, 2026-07-18)
+
+The site never explains its own references. Allusions stay unglossed — discoverable by a curious
+reader, not annotated for them. If a stylistic addition needs an explainer to land, cut the
+explainer or cut the addition. Dan is deliberately dictatorial about taste here; the default is
+restraint, with flourishes opt-in — when unsure whether something reads as charming or cringe,
+show Dan before shipping.
+
 ## Anti-patterns (never)
 
 - Growth/hustle/personal-brand tone
