@@ -24,6 +24,17 @@ Research (2026-07-18) found both Fight Pretty MySpace pages **live with full tra
 - Bandcamp (stable, lossless downloadable): https://whimpermusic.bandcamp.com/album/i-heard-you-the-first-time — Dan on guitar/vocals; recorded at Civil Recording (Michael Briggs), Nov 2015
 - Also on Spotify, RateYourMusic, YouTube — low risk; mirror the Bandcamp lossless files during the archive sprint
 
+### Pry — **current band**
+
+- Bandcamp: https://pryband.bandcamp.com/music — Dan played on **"S.O.B."** (5-track album, released 2025-04-20): https://pryband.bandcamp.com/album/s-o-b
+- **New EP recording session: weekend of 2026-07-18** — capture the archive at the source this time: keep session files, stems, and bounces organized from day one; this release documents itself.
+- Low archival risk (active, on Bandcamp); mirror lossless during archive sprint. Prime content for /music and a future /now page.
+
+### Power Objects — past band
+
+- Bandcamp: https://powerobjects.bandcamp.com/album/frosted-tips-2020-remix-remaster — "Frosted Tips (2020 remix/remaster)", 5 tracks, released 2020-09-13
+- Low risk (Bandcamp); mirror lossless during sprint. Original (pre-remaster) mixes — where do they live? Ask Dan.
+
 ### A Giant's Wing — research in progress
 
 - Confirmed by Dan (2026-07-18); may have a MySpace page. Details pending research.
