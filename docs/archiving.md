@@ -24,6 +24,14 @@ Research (2026-07-18) found both Fight Pretty MySpace pages **live with full tra
 - Bandcamp (stable, lossless downloadable): https://whimpermusic.bandcamp.com/album/i-heard-you-the-first-time — Dan on guitar/vocals; recorded at Civil Recording (Michael Briggs), Nov 2015
 - Also on Spotify, RateYourMusic, YouTube — low risk; mirror the Bandcamp lossless files during the archive sprint
 
+### A Giant's Wing — research in progress
+
+- Confirmed by Dan (2026-07-18); may have a MySpace page. Details pending research.
+
+### Dear Human — research in progress
+
+- Confirmed by Dan (2026-07-18); on Bandcamp, may also have a MySpace page. Watch for name collisions (other "Dear Human" acts exist). Details pending research.
+
 ### Still needed from Dan
 
 - [ ] Corrections + other bands/releases the research missed

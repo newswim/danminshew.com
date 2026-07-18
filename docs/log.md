@@ -2,6 +2,11 @@
 
 Newest first. Short entries; link out rather than re-explain.
 
+## 2026-07-18 (later)
+
+- **Repo reclaimed**: old public repo renamed to `newswim/danminshew.com-2018` (GitHub redirects preserved); fresh **private** `newswim/danminshew.com` created; initial commit pushed. Brief approved by Dan.
+- **Two more bands confirmed by Dan**: A Giant's Wing and Dear Human (Bandcamp) — research sweep in flight, findings will land in [archiving.md](archiving.md).
+
 ## 2026-07-18
 
 - **Footprint research completed**: identity map verified (GitHub newswim, Atlassian/SimSpace, Open Austin, TechMill Denton, Medium/dev.to writing). Bands documented: Fight Pretty (Richwood TX hardcore, ~2005–2009) and Whimper (Denton, 2015). Findings folded into [archiving.md](archiving.md).
