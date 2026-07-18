@@ -1,0 +1,151 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--size-0);
+  line-height: var(--leading);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+main {
+  width: min(100% - 2 * var(--space-3), var(--measure));
+  margin-inline: auto;
+  padding-block: var(--space-4);
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-3);
+  margin: 0 0 var(--space-3);
+}
+
+h2 {
+  font-size: var(--size-2);
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+h3 {
+  font-size: var(--size-1);
+  margin: var(--space-3) 0 var(--space-1);
+}
+
+p,
+ul,
+ol {
+  margin-block: 0 var(--space-2);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--moss);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 120ms ease;
+}
+
+a:hover {
+  color: var(--moss-bright);
+}
+
+blockquote {
+  margin: var(--space-3) 0;
+  padding-inline-start: var(--space-2);
+  border-inline-start: 2px solid var(--moss);
+  color: var(--faded);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-block: var(--space-4);
+}
+
+code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--wash);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--wash);
+  padding: var(--space-2);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.quiet {
+  color: var(--faded);
+  font-size: 0.9em;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: var(--space-2);
+  inset-block-start: var(--space-1);
+  background: var(--paper);
+  padding: var(--space-1) var(--space-2);
+  translate: 0 -300%;
+}
+
+.skip-link:focus {
+  translate: 0 0;
+}
+
+/* entry lists (writing index, home) */
+.entry-list {
+  list-style: none;
+  padding: 0;
+}
+
+.entry-list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-block: var(--space-1);
+  border-bottom: 1px solid var(--line);
+}
+
+.entry-list time {
+  color: var(--faded);
+  font-family: var(--font-ui);
+  font-size: 0.8em;
+  white-space: nowrap;
+  margin-inline-start: auto;
+}

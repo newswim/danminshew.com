@@ -12,3 +12,4 @@ Immutable, append-only. New decisions get the next ID; a reversal is a *new* ent
 | D-006 | 2026-07-18 | Stack: Astro + TypeScript, content as markdown/MDX collections — see [tech.md](tech.md) for rationale | proposed |
 | D-007 | 2026-07-18 | Project brief approved by Dan — see [brief.md](brief.md) | accepted |
 | D-008 | 2026-07-18 | Knowledge base splits mutable [status.md](status.md) from this immutable decision record, replacing the combined log.md | accepted |
+| D-009 | 2026-07-18 | Stack accepted by Dan (accepts D-006). SCSS considered and declined — modern baseline CSS (custom properties, nesting, color-mix) makes a precompiler unnecessary | accepted |

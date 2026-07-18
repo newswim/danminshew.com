@@ -1,25 +1,25 @@
 # Status
 
 > Mutable snapshot, shared between agents/sessions — overwrite freely, keep it current. History lives in git; decision points live in [decisions.md](decisions.md).
-> **Last updated: 2026-07-18**
+> **Last updated: 2026-07-18 (evening)**
 
 ## In flight
 
-- **Dan testing logged-in MySpace playback** on four band pages (agiantswing, dearhuman, fightpretty, fight.pretty — see [archiving.md](archiving.md)). Outcome decides: capture sprint vs. physical-media/bandmate recovery.
+- **Dan hunting lost recordings on YouTube** — MySpace-hosted audio confirmed dead (logged-in test); YouTube-backed tracks still play, making YouTube the primary recovery lane. See [archiving.md](archiving.md).
 - **Pry EP recording session this weekend** — capture at the source: session files, stems, bounces organized and backed up.
 
 ## Recently done
 
-- Repo reclaimed (D-003), knowledge base seeded and pushed
-- Footprint research complete — all six bands documented in [archiving.md](archiving.md)
-- Wayback snapshots confirmed (2026-07-18) for all four MySpace pages + song listings
+- **Astro scaffold built and verified** (D-006/D-009): tokens + plain-CSS design system (light/dark), Base layout, six pages (home/about/work/projects/music/writing), writing content collection with sample post, RSS, sitemap, robots.txt, Person JSON-LD, favicon. Verified in browser both color schemes; UTC date-formatting bug fixed.
+- Repo reclaimed (D-003); knowledge base seeded; all six bands documented; Wayback snapshots confirmed for all four MySpace pages.
 
 ## Queued
 
-- **Astro scaffold** — awaiting Dan's go (stack per [tech.md](tech.md), D-006)
-- MySpace audio capture sprint, if logged-in playback works
-- Voice refinement against Dan's first real drafts
-- Contact Michael Briggs / Violitionist re: Denton-era masters (if MySpace streams are dead)
+- **Deploy to Vercel** + wire danminshew.com DNS (site currently resolves to nothing)
+- Dan replaces placeholder copy (about, work, projects, music) — voice pass against [voice.md](voice.md) as drafts land
+- Font direction + design refinement (open question in [tech.md](tech.md))
+- Contact Michael Briggs / Violitionist re: Denton-era masters
+- Digitization sprint: physical media inventory in [archiving.md](archiving.md)
 
 ## Parked ideas
 

@@ -1,0 +1,40 @@
+/* Design tokens — the whole visual system lives here. */
+
+:root {
+  /* color — warm paper & forest ink */
+  --paper: #faf7f0;
+  --ink: #2b352e;
+  --faded: #6b7a6e;
+  --moss: #4a6b4f;
+  --moss-bright: #3d7a4a;
+  --line: #e3ddd0;
+  --wash: #f1ece1;
+
+  /* type */
+  --font-body: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+  --font-ui: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --size-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --size-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --size-2: clamp(1.5rem, 1.3rem + 1vw, 1.9rem);
+  --size-3: clamp(1.9rem, 1.6rem + 1.5vw, 2.5rem);
+  --leading: 1.65;
+
+  /* layout */
+  --measure: 42rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 3.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #191f1a;
+    --ink: #e8e4d8;
+    --faded: #97a397;
+    --moss: #8fae8b;
+    --moss-bright: #a3c69c;
+    --line: #2e372f;
+    --wash: #202821;
+  }
+}

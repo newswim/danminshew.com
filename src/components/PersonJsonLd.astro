@@ -1,0 +1,13 @@
+---
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dan Minshew',
+  url: 'https://danminshew.com',
+  jobTitle: 'Software Engineer',
+  address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX' },
+  sameAs: ['https://github.com/newswim', 'https://pryband.bandcamp.com'],
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />

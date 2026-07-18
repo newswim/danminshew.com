@@ -6,7 +6,11 @@ Goal: preserve the records and audio of Dan's musical and online history before 
 
 MySpace **already lost roughly 12 years of user-uploaded music (2003–2015, ~50M songs) in a 2019 server migration**. Anything still playable there survived by luck and should be treated as at-risk. If a band page still streams recordings, capture it **now**, not during some future archiving sprint.
 
-Research (2026-07-18) found both Fight Pretty MySpace pages **live with full track metadata**, but audio did not stream in anonymous testing — the player queues tracks yet never fetches an audio source. Either the streams are gone (2019-loss casualty) or anonymous playback is broken. **Next cheap experiment: retest playback while logged in to MySpace.** If any stream resolves, capture same-day (yt-dlp or browser network capture), plus full-page snapshots for artwork/blurbs/comments.
+**Logged-in playback test (Dan, 2026-07-18): MySpace-hosted audio does not play — the files are likely lost** (consistent with the 2019 migration loss). What *did* play were tracks backed by YouTube embeds. Consequences:
+
+- **YouTube is now a primary recovery lane** — search track/album/band titles; lost media often survives in fan uploads and old channel accounts. Dan is searching independently.
+- Remaining recovery paths for MySpace-only material: physical media (CD-Rs, drives), bandmates' copies, and Michael Briggs (see below).
+- Wayback snapshots (taken 2026-07-18) preserve the metadata layer regardless.
 
 ## Inventory (from research; Dan to correct/extend)
 
