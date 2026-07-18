@@ -35,13 +35,23 @@ Research (2026-07-18) found both Fight Pretty MySpace pages **live with full tra
 - Bandcamp: https://powerobjects.bandcamp.com/album/frosted-tips-2020-remix-remaster — "Frosted Tips (2020 remix/remaster)", 5 tracks, released 2020-09-13
 - Low risk (Bandcamp); mirror lossless during sprint. Original (pre-remaster) mixes — where do they live? Ask Dan.
 
-### A Giant's Wing — research in progress
+### A Giant's Wing — Richwood TX, ~2004–2005 — ⚠️ HIGHEST RISK
 
-- Confirmed by Dan (2026-07-18); may have a MySpace page. Details pending research.
+- **MySpace is the SOLE known copy of this band's music**: https://myspace.com/agiantswing — "winter '04 demo", 3 tracks: "Sleep Through Years" (5:32), "Christopher Walken" (5:12), "Snow May Spark Floods" (2:54). No Bandcamp, Discogs, Spotify, Archive.org, press, or YouTube presence at all.
+- Anonymous playback fails (same dead-player signature as Fight Pretty). If logged-in playback also fails, recovery depends entirely on physical media — CD-Rs, drives, bandmates.
+- Wayback: only a Feb 2005 old-MySpace capture existed; fresh snapshots submitted 2026-07-18.
 
-### Dear Human — research in progress
+### Dear Human — Denton TX instrumental/math rock, ~2008–2010
 
-- Confirmed by Dan (2026-07-18); on Bandcamp, may also have a MySpace page. Watch for name collisions (other "Dear Human" acts exist). Details pending research.
+- Bandcamp (stable, CC BY-NC, downloadable): https://dearhuman.bandcamp.com/ — s/t album, 2010-03-26, **Gutterth Records** (GR021). Dan on guitar (L), with Casey Nalley, Michael Scroggins, John Gillespie; mixed with Michael Briggs.
+- **MySpace: https://myspace.com/dearhuman — 4 tracks exist nowhere else**: "waiting - EARLY DEMO" (2009), "kareem octopus - DEMO" (2009), "nomadic music box - DEMO" (2009), and "Nomadic (Live from RGRS)" (2008, from MySpace-only release "Andrew's iPhone"). Same playback caveat. Fresh Wayback snapshots submitted 2026-07-18.
+- Spotify artist page confirmed; Violitionist Session recorded March 2010 (by Michael Briggs) — ask Violitionist/Briggs about session masters.
+- **dearhuman.org is lost** — lapsed, parked for sale on GoDaddy. Historical content is Wayback-only.
+- Check Gutterth compilation albums (gutterth.bandcamp.com) for Dear Human appearances.
+
+### Key human lead
+
+**Michael Briggs (Civil Recording / Gutterth, Denton)** recorded Dear Human's album + Violitionist session AND Whimper's 2015 EP — likely the single best source for lost Denton-era masters.
 
 ### Still needed from Dan
 
