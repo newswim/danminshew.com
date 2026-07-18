@@ -12,6 +12,7 @@ const YOUNG = { ...FULL, depth: 3, len0: 19, spread: 33, prune: 0.15, pruneDeep:
 const SEED = 55;
 
 const MOSS = '#4a6b4f', MOSS_DARK = '#8fae8b', PAPER = '#faf7f0', INK = '#2b352e';
+const FADED = '#6b7a6e', GROUND = '#ddd6c6';
 
 function mulberry32(a) {
   return function () {
@@ -101,13 +102,19 @@ const touch = `<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" 
   </g>
 </svg>`;
 
-// og: full tree above the wordmark, paper card
+// og: name + tagline left, full tree standing on a ground line right (V1 "anchored")
+const fullSegs = genTree(FULL, SEED);
+let fMinY = 0;
+for (const s of fullSegs) for (const p of [s.P, s.C, s.E]) fMinY = Math.min(fMinY, p[1]);
+const ogScale = (340 / -fMinY).toFixed(3);
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${PAPER}"/>
-  <g transform="translate(200 268) scale(1.95)" fill="none" stroke="${MOSS}" stroke-linecap="round">
+  <line x1="96" y1="470" x2="1104" y2="470" stroke="${GROUND}" stroke-width="2.5"/>
+  <g transform="translate(940 470) scale(${ogScale})" fill="none" stroke="${MOSS}" stroke-linecap="round">
     ${full.paths.join('\n    ')}
   </g>
-  <text x="118" y="425" font-family="Iowan Old Style, Palatino, Georgia, serif" font-style="italic" font-weight="500" font-size="96" fill="${INK}">Dan Minshew</text>
+  <text x="110" y="310" font-family="Iowan Old Style, Palatino, Georgia, serif" font-style="italic" font-weight="500" font-size="92" fill="${INK}">Dan Minshew</text>
+  <text x="112" y="380" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="33" fill="${FADED}">Software engineer &amp; musician in Austin, Texas.</text>
 </svg>`;
 
 await sharp(Buffer.from(touch)).png().toFile('public/apple-touch-icon.png');
