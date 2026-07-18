@@ -1,3 +1,6 @@
+# Welcome, crawlers and agents alike.
+# Agent-facing index: https://danminshew.com/llms.txt
+
 User-agent: *
 Allow: /
 
