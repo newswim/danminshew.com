@@ -1,7 +1,7 @@
-// The site mark: a fractal tree, grown deterministically from tuned parameters.
-// Regenerates public/favicon.svg, public/apple-touch-icon.png, public/og.png.
-// The header mark in src/components/Header.astro shares the YOUNG geometry below.
-// Run: npm run mark   (D-016)
+// The site mark: a fractal tree drawn in beads — dots along the branch skeleton,
+// sized by branch depth. Regenerates public/favicon.svg, public/apple-touch-icon.png,
+// public/og.png. The header mark in src/components/Header.astro shares the YOUNG dots.
+// Run: npm run mark   (D-016, beaded rendering + upright type D-019)
 import sharp from 'sharp';
 import { writeFileSync } from 'node:fs';
 
@@ -10,6 +10,9 @@ const FULL = { depth: 4, spread: 28, ratio: 0.73, asym: 0.55, curve: 0.7, lean: 
 // young tree for small sizes: depth 3, shorter trunk, wider spread
 const YOUNG = { ...FULL, depth: 3, len0: 19, spread: 33, prune: 0.15, pruneDeep: 0.2 };
 const SEED = 55;
+// bead sizing: r0 at the trunk, tapering per depth; gapK spaces beads ~touching
+const FULL_DOTS = { r0: 2.6, taper: 0.78, minR: 1.0, gapK: 2.1 };
+const YOUNG_DOTS = { r0: 4.8, taper: 0.84, minR: 2.4, gapK: 2.3 };
 
 const MOSS = '#4a6b4f', MOSS_DARK = '#8fae8b', PAPER = '#faf7f0', INK = '#2b352e';
 const FADED = '#6b7a6e', GROUND = '#ddd6c6';
@@ -53,70 +56,93 @@ function genTree(P, seed) {
   return segs;
 }
 
-function pathsAndBox(segs, { w0, taper, minW }) {
-  let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
-  for (const s of segs)
-    for (const [x, y] of [s.P, s.C, s.E]) {
-      minX = Math.min(minX, x); maxX = Math.max(maxX, x);
-      minY = Math.min(minY, y); maxY = Math.max(maxY, y);
-    }
-  const pad = 4.5;
-  const w = maxX - minX + 2 * pad, h = maxY - minY + 2 * pad;
-  const size = Math.max(w, h);
-  const f = (n) => +n.toFixed(2);
-  const box = [f(minX - pad - (size - w) / 2), f(minY - pad - (size - h) / 2), f(size), f(size)];
-  const paths = segs.map((s) => {
-    const wd = Math.max(minW, w0 * Math.pow(taper, s.d));
-    return `<path d="M${f(s.P[0])} ${f(s.P[1])} Q${f(s.C[0])} ${f(s.C[1])} ${f(s.E[0])} ${f(s.E[1])}" stroke-width="${f(wd)}"/>`;
-  });
-  return { paths, box };
+function bez(s, t) {
+  const u = 1 - t;
+  return [u * u * s.P[0] + 2 * u * t * s.C[0] + t * t * s.E[0], u * u * s.P[1] + 2 * u * t * s.C[1] + t * t * s.E[1]];
 }
 
-const full = pathsAndBox(genTree(FULL, SEED), { w0: 6.4, taper: 0.8, minW: 2.2 });
-const young = pathsAndBox(genTree(YOUNG, SEED), { w0: 5.8, taper: 0.88, minW: 2.6 });
+// beads along each branch curve, spaced by radius; joints keep a single bead
+function dotsFor(P, seed, { r0, taper, minR, gapK }) {
+  const dots = [];
+  for (const s of genTree(P, seed)) {
+    const r = Math.max(minR, r0 * Math.pow(taper, s.d));
+    const N = 24;
+    const pts = [];
+    let len = 0, prev = null;
+    for (let i = 0; i <= N; i++) {
+      const p = bez(s, i / N);
+      if (prev) len += Math.hypot(p[0] - prev[0], p[1] - prev[1]);
+      pts.push([p[0], p[1], len]);
+      prev = p;
+    }
+    const n = Math.max(1, Math.round(len / (r * gapK)));
+    for (let k = s.d === 0 ? 0 : 1; k <= n; k++) {
+      const target = (len * k) / n;
+      const p = pts.find((pp) => pp[2] >= target) ?? pts[pts.length - 1];
+      dots.push({ x: p[0], y: p[1], r });
+    }
+  }
+  return dots;
+}
 
-// favicon: bare young tree, adapts to dark tabs
+const f = (n) => +n.toFixed(2);
+const circles = (dots) => dots.map((d) => `<circle cx="${f(d.x)}" cy="${f(d.y)}" r="${f(d.r)}"/>`).join('\n    ');
+function bboxOf(dots) {
+  let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+  for (const d of dots) {
+    minX = Math.min(minX, d.x - d.r); maxX = Math.max(maxX, d.x + d.r);
+    minY = Math.min(minY, d.y - d.r); maxY = Math.max(maxY, d.y + d.r);
+  }
+  const pad = 2.5, w = maxX - minX + 2 * pad, h = maxY - minY + 2 * pad;
+  const size = Math.max(w, h);
+  return [f(minX - pad - (size - w) / 2), f(minY - pad - (size - h) / 2), f(size), f(size)];
+}
+
+const youngDots = dotsFor(YOUNG, SEED, YOUNG_DOTS);
+const fullDots = dotsFor(FULL, SEED, FULL_DOTS);
+const youngBox = bboxOf(youngDots);
+
+// favicon: bare beaded young tree, adapts to dark tabs
 writeFileSync(
   'public/favicon.svg',
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${young.box.join(' ')}">
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${youngBox.join(' ')}">
   <style>
-    path { stroke: ${MOSS}; }
+    circle { fill: ${MOSS}; }
     @media (prefers-color-scheme: dark) {
-      path { stroke: ${MOSS_DARK}; }
+      circle { fill: ${MOSS_DARK}; }
     }
   </style>
-  <g fill="none" stroke-linecap="round">
-    ${young.paths.join('\n    ')}
+  <g>
+    ${circles(youngDots)}
   </g>
 </svg>
 `
 );
 
-// apple-touch-icon: paper young tree on moss, 180px (iOS requires opaque)
-const [yx, yy, ys] = young.box;
+// apple-touch-icon: paper beads on moss, 180px (iOS requires opaque)
+const [yx, yy, ys] = youngBox;
 const ts = 128 / ys;
 const touch = `<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
   <rect width="180" height="180" fill="${MOSS}"/>
-  <g transform="translate(${(90 - ts * (yx + ys / 2)).toFixed(1)} ${(90 - ts * (yy + ys / 2)).toFixed(1)}) scale(${ts.toFixed(3)})" fill="none" stroke="${PAPER}" stroke-linecap="round">
-    ${young.paths.join('\n    ')}
+  <g transform="translate(${(90 - ts * (yx + ys / 2)).toFixed(1)} ${(90 - ts * (yy + ys / 2)).toFixed(1)}) scale(${ts.toFixed(3)})" fill="${PAPER}">
+    ${circles(youngDots)}
   </g>
 </svg>`;
 
-// og: name + tagline left, full tree standing on a ground line right (V1 "anchored")
-const fullSegs = genTree(FULL, SEED);
+// og: name + tagline left (upright Iowan), beaded full tree planted on a ground line right
 let fMinY = 0;
-for (const s of fullSegs) for (const p of [s.P, s.C, s.E]) fMinY = Math.min(fMinY, p[1]);
+for (const d of fullDots) fMinY = Math.min(fMinY, d.y - d.r);
 const ogScale = (340 / -fMinY).toFixed(3);
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${PAPER}"/>
   <line x1="96" y1="470" x2="1104" y2="470" stroke="${GROUND}" stroke-width="2.5"/>
-  <g transform="translate(940 470) scale(${ogScale})" fill="none" stroke="${MOSS}" stroke-linecap="round">
-    ${full.paths.join('\n    ')}
+  <g transform="translate(940 470) scale(${ogScale})" fill="${MOSS}">
+    ${circles(fullDots)}
   </g>
-  <text x="110" y="310" font-family="Iowan Old Style, Palatino, Georgia, serif" font-style="italic" font-weight="500" font-size="92" fill="${INK}">Dan Minshew</text>
+  <text x="110" y="310" font-family="Iowan Old Style, Palatino, Georgia, serif" font-weight="500" font-size="92" fill="${INK}">Dan Minshew</text>
   <text x="112" y="380" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="33" fill="${FADED}">Software engineer &amp; musician in Austin, Texas.</text>
 </svg>`;
 
 await sharp(Buffer.from(touch)).png().toFile('public/apple-touch-icon.png');
 await sharp(Buffer.from(og)).png().toFile('public/og.png');
-console.log('regenerated favicon.svg, apple-touch-icon.png, og.png (seed', SEED + ')');
+console.log('regenerated favicon.svg, apple-touch-icon.png, og.png (beaded, seed', SEED + ')');
