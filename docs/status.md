@@ -7,7 +7,7 @@
 
 Infrastructure phase is **done**: site live at https://danminshew.com (TLS, www→apex 308, auto-deploy on push), SEO baseline + agent routes shipped, rotating epigraph + colophon landed (D-012/D-013), taste principle recorded in [voice.md](voice.md). The project is now content-bound.
 
-Visual identity established (D-016) and live on main: fractal-tree mark, deterministic from Dan's parameters at seed 55 — regenerate any asset with `npm run mark`. Beaded rendering + upright OG type (D-019) in flight on branch `beaded-mark`.
+Visual identity established (D-016) and live on main: fractal-tree mark, deterministic from Dan's parameters at seed 55 — regenerate any asset with `npm run mark`. Rendering settled on stipple (D-020, supersedes beaded D-019) with upright OG type; in flight on branch `stippled-mark`.
 
 ## Waiting on Dan
 

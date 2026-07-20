@@ -1,7 +1,8 @@
-// The site mark: a fractal tree drawn in beads — dots along the branch skeleton,
-// sized by branch depth. Regenerates public/favicon.svg, public/apple-touch-icon.png,
-// public/og.png. The header mark in src/components/Header.astro shares the YOUNG dots.
-// Run: npm run mark   (D-016, beaded rendering + upright type D-019)
+// The site mark: a fractal tree in stipple — separated dots along the branch
+// skeleton, sized by branch depth. Regenerates public/favicon.svg,
+// public/apple-touch-icon.png, public/og.png. The header mark in
+// src/components/Header.astro shares the YOUNG dots.
+// Run: npm run mark   (D-016; stippled rendering D-020, upright type D-019)
 import sharp from 'sharp';
 import { writeFileSync } from 'node:fs';
 
@@ -10,9 +11,9 @@ const FULL = { depth: 4, spread: 28, ratio: 0.73, asym: 0.55, curve: 0.7, lean: 
 // young tree for small sizes: depth 3, shorter trunk, wider spread
 const YOUNG = { ...FULL, depth: 3, len0: 19, spread: 33, prune: 0.15, pruneDeep: 0.2 };
 const SEED = 55;
-// bead sizing: r0 at the trunk, tapering per depth; gapK spaces beads ~touching
-const FULL_DOTS = { r0: 2.6, taper: 0.78, minR: 1.0, gapK: 2.1 };
-const YOUNG_DOTS = { r0: 4.8, taper: 0.84, minR: 2.4, gapK: 2.3 };
+// dot sizing: r0 at the trunk, tapering per depth; gapK ~3 leaves air between dots
+const FULL_DOTS = { r0: 2.2, taper: 0.78, minR: 0.9, gapK: 3.0 };
+const YOUNG_DOTS = { r0: 3.6, taper: 0.84, minR: 2.0, gapK: 2.9 };
 
 const MOSS = '#4a6b4f', MOSS_DARK = '#8fae8b', PAPER = '#faf7f0', INK = '#2b352e';
 const FADED = '#6b7a6e', GROUND = '#ddd6c6';
@@ -145,4 +146,4 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
 
 await sharp(Buffer.from(touch)).png().toFile('public/apple-touch-icon.png');
 await sharp(Buffer.from(og)).png().toFile('public/og.png');
-console.log('regenerated favicon.svg, apple-touch-icon.png, og.png (beaded, seed', SEED + ')');
+console.log('regenerated favicon.svg, apple-touch-icon.png, og.png (stippled, seed', SEED + ')');
