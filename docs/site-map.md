@@ -9,7 +9,7 @@ Mirrors the README's four pillars, plus writing. Start small; every page earns i
 - **/work** — Professional history and capabilities. Calm resume, not a LinkedIn clone.
 - **/projects** — Built and building: apps, websites, volunteer/civic projects. Each project gets a short writeup (what, why, stack, status). ThisTownSucks lives here or in /music, wherever it fits better.
 - **/music** — Bands played in, recordings, venues, bands played with. Part history, part archive. This is where rescued MySpace-era audio eventually lives (see archiving.md).
-- **/writing** — Essays, notes, thoughts. The blog, without calling it that.
+- **/writing** — Essays, notes, thoughts. The blog, without calling it that. Organized as a file drawer (D-021): folders for threads of writing (dreams first), unfiled entries below.
 - **/colophon** — how the site is built, nothing more (promoted from v2, 2026-07-18).
 
 ## v2 candidates (don't build yet)

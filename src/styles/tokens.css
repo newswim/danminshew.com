@@ -9,6 +9,8 @@
   --moss-bright: #3d7a4a;
   --line: #e3ddd0;
   --wash: #f1ece1;
+  --manila: #eee3c4;
+  --manila-line: #d7c69b;
 
   /* type */
   --font-body: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
@@ -36,5 +38,7 @@
     --moss-bright: #a3c69c;
     --line: #2e372f;
     --wash: #202821;
+    --manila: #282a1e;
+    --manila-line: #4a4834;
   }
 }

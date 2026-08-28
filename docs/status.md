@@ -1,7 +1,7 @@
 # Status
 
 > Mutable snapshot, shared between agents/sessions — overwrite freely, keep it current. History lives in git; decision points live in [decisions.md](decisions.md).
-> **Last updated: 2026-07-18 (night)**
+> **Last updated: 2026-08-28**
 
 ## Where things stand
 
@@ -9,8 +9,11 @@ Infrastructure phase is **done**: site live at https://danminshew.com (TLS, www�
 
 Visual identity established (D-016) and live on main: fractal-tree mark, deterministic from Dan's parameters at seed 55 — regenerate any asset with `npm run mark`. Rendering settled on stipple (D-020, supersedes beaded D-019) with upright OG type; in flight on branch `stippled-mark`.
 
+Writing page rebuilt as a file drawer (D-021, proposed) — in flight on branch `claude/writing-page-expansion-ofixaf`: manila folders from subdirectories of `src/content/writing/`, dreams folder first (empty, held open by a draft template). Filing a post = moving its file into a folder; declaring a folder = one line in `src/data/writing-folders.ts`.
+
 ## Waiting on Dan
 
+- **Writing drawer taste review** (D-021, 2026-08-28): the flourishes are opt-in per [voice.md](voice.md) and each is a few lines to cut — staggered tab cuts, the "filed under" line on filed posts, the "Empty for now." empty-folder copy, the manila tones (`--manila`/`--manila-line` in tokens.css), entry counts on tabs. Then: file the first dream (drop a markdown file in `src/content/writing/dreams/`).
 - **Projects page review** (rebuilt 2026-07-18 as content collection, D-014): check the copy in `src/content/projects/*.md`; fill in `stack:` arrays (left empty rather than guessed); supply a Texas Defense Data screenshot (the alpha is password-gated, so no capture) — drop it in `src/content/projects/images/` + one frontmatter line.
 
 - **OG tagline phrase** — current card says "Software engineer & musician in Austin, Texas." as a deliberate placeholder (D-018); Dan wants something with more life. Swap is one line in `scripts/generate-mark.mjs` + `npm run mark`.
