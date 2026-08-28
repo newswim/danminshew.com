@@ -1,10 +1,31 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { writingFolders } from '../../data/writing-folders';
 
 const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+// A post's folder is the first path segment of its id: dreams/foo.md files under Dreams.
+const folderOf = (id: string) => (id.includes('/') ? id.split('/')[0] : null);
+
+const discovered = posts.flatMap((p) => {
+  const slug = folderOf(p.id);
+  return slug ? [slug] : [];
+});
+
+const folders = [
+  ...writingFolders,
+  ...[...new Set(discovered)]
+    .filter((slug) => !writingFolders.some((f) => f.slug === slug))
+    .map((slug) => ({ slug, label: slug.charAt(0).toUpperCase() + slug.slice(1) })),
+].map((folder) => ({
+  ...folder,
+  entries: posts.filter((p) => folderOf(p.id) === folder.slug),
+}));
+
+const unfiled = posts.filter((p) => folderOf(p.id) === null);
 
 const fmt = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -16,14 +37,179 @@ const fmt = new Intl.DateTimeFormat('en-US', {
 
 <Base title="Writing" description="Essays, notes, and thoughts by Dan Minshew.">
   <h1>Writing</h1>
-  <ul class="entry-list">
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/writing/${post.id}/`}>{post.data.title}</a>
-          <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
-        </li>
-      ))
-    }
-  </ul>
+
+  {
+    folders.length > 0 && (
+      <div class="drawer">
+        {folders.map((folder) => (
+          <details class="folder" id={folder.slug} open={folder.entries.length > 0}>
+            <summary>
+              <span class="folder-tab">
+                {folder.label}
+                {folder.entries.length > 0 && (
+                  <span class="folder-count">{folder.entries.length}</span>
+                )}
+              </span>
+            </summary>
+            <div class="folder-body">
+              {folder.entries.length > 0 ? (
+                <ul class="entry-list">
+                  {folder.entries.map((post) => (
+                    <li>
+                      <a href={`/writing/${post.id}/`}>{post.data.title}</a>
+                      <time datetime={post.data.date.toISOString()}>
+                        {fmt.format(post.data.date)}
+                      </time>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p class="quiet">Empty for now.</p>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    unfiled.length > 0 && (
+      <>
+        {folders.length > 0 && <h2 class="unfiled-label">Unfiled</h2>}
+        <ul class="entry-list">
+          {unfiled.map((post) => (
+            <li>
+              <a href={`/writing/${post.id}/`}>{post.data.title}</a>
+              <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
 </Base>
+
+<style>
+  .drawer {
+    margin-block: var(--space-3) var(--space-4);
+  }
+
+  .folder + .folder {
+    margin-block-start: var(--space-3);
+  }
+
+  .folder summary {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .folder summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* The rail the tab rides on — reads as the folder's top edge in the drawer. */
+  .folder summary::before,
+  .folder summary::after {
+    content: '';
+    border-block-end: 1px solid var(--manila-line);
+  }
+
+  .folder summary::before {
+    flex: 0 1 var(--tab-inset, 0px);
+  }
+
+  .folder summary::after {
+    flex: 1 0 1rem;
+  }
+
+  /* Tabs cut in rotating positions, the way a box of folders comes. */
+  .folder:nth-of-type(3n + 2) {
+    --tab-inset: 34%;
+  }
+
+  .folder:nth-of-type(3n) {
+    --tab-inset: 68%;
+  }
+
+  .folder-tab {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6em;
+    min-width: 0;
+    background: var(--manila);
+    border: 1px solid var(--manila-line);
+    border-block-end: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 0.25rem 1rem 0.3rem;
+    font-size: 0.95em;
+  }
+
+  .folder:not([open]) .folder-tab {
+    border-block-end: 1px solid var(--manila-line);
+    border-radius: 8px 8px 2px 2px;
+  }
+
+  .folder summary:hover .folder-tab {
+    color: var(--moss-bright);
+  }
+
+  .folder-count {
+    font-family: var(--font-ui);
+    font-size: 0.7em;
+    color: var(--faded);
+  }
+
+  .folder-body {
+    background: var(--manila);
+    border: 1px solid var(--manila-line);
+    border-block-start: 0;
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem var(--space-2) 0.65rem;
+  }
+
+  .folder-body > :last-child,
+  .folder-body .entry-list {
+    margin-block-end: 0;
+  }
+
+  .folder-body .quiet {
+    font-size: 0.9em;
+  }
+
+  .folder .entry-list li {
+    border-block-end-color: color-mix(in oklab, var(--manila-line) 45%, var(--manila));
+  }
+
+  .folder .entry-list li:last-child {
+    border-block-end: 0;
+  }
+
+  .unfiled-label {
+    font-size: 0.85em;
+    font-family: var(--font-ui);
+    font-weight: 400;
+    color: var(--faded);
+    margin: var(--space-4) 0 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .folder {
+      interpolate-size: allow-keywords;
+    }
+
+    .folder::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        content-visibility 220ms allow-discrete,
+        block-size 220ms ease;
+    }
+
+    .folder[open]::details-content {
+      block-size: auto;
+    }
+  }
+</style>
